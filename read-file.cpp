@@ -8,9 +8,6 @@
 
 using namespace std;
 
-/**
-  Parsing the command-line arguments to the program and extracting the relevant values
- */
 bool parse_args(int argc, char* argv[], BrainFlowInputParams& params, int& board_id);
 void performStreaming(BrainFlowInputParams params, int board_id);
 
@@ -36,11 +33,16 @@ int main(int argc, char* argv[])
     return 0;
 }
 
+/**
+  Parsing the command-line arguments to the program and extracting the relevant values
+ */
 bool parse_args(int argc, char* argv[], BrainFlowInputParams& params, int& board_id)
 {
-    unordered_map<string, string> argMap;
+  //storing the passed arguments into the map
+  unordered_map<string, string> argMap;
     bool board_id_found = false;
-    
+
+  //populating the map with values
     for (int i = 1; i < argc; i += 2)
     {
         string arg = argv[i];
@@ -59,7 +61,7 @@ bool parse_args(int argc, char* argv[], BrainFlowInputParams& params, int& board
         return false;
     }
     
-    // Assign parsed arguments to params object
+    // Assigning the other parameters
     if (argMap.count("--ip-address") > 0)
     {
         params.ip_address = argMap["--ip-address"];
