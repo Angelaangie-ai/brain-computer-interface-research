@@ -120,13 +120,18 @@ bool parse_args(int argc, char* argv[], BrainFlowInputParams& params, int& board
     return true;
 }
 
+/**
+  Streaming of data from a brain-sensing board, having the parameters as parameters and board id
+  */
 void performStreaming(BrainFlowInputParams params, int board_id)
 {
     try
     {
         unique_ptr<BoardShim> board(new BoardShim(board_id, params));
-        
+
+        //the board object is prepared for a session of streaming data
         board->prepare_session();
+        //data streaming from the board
         board->start_stream();
         
         // Sleep for 5 seconds
