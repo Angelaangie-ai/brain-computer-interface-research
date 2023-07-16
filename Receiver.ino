@@ -96,18 +96,20 @@ void receiverLoop() {
       Input = (char*)buf;
       Serial.println(Input); //printing to the serial monitor
       53 uint8_t data[] = "Recieved";
-      rf69.send(data, sizeof(data));
+      rf69.send(data, sizeof(data)); //sends a response message
       rf69.waitPacketSent();
     } else {
     }
   }
 }
-// Left Turn
+/**
+ Making the robot turn left
+*/
 void turnLeft() {
-  motors.setSpeeds(-turnSpeed, turnSpeed);
+  motors.setSpeeds(-turnSpeed, turnSpeed); //setting up motor speeds
   for (int i = 0; i < 3500; i++) {
-    receiverLoop();
-    if (Input == "J") {
+    receiverLoop(); //calling receiverLoop to check for messages
+    if (Input == "J") { 
       break;
     } else {
       delay(1);
@@ -136,7 +138,7 @@ void stateMachine() {
     motors.setSpeeds(0, 0);
     if (Input == "A") {
       state = Forward_Idle;
-      54 Serial.print("State: Forward Idle");
+      Serial.print("State: Forward Idle");
     }
   }
   // Forward_Idle
