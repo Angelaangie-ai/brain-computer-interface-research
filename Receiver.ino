@@ -18,11 +18,11 @@ Zumo32U4Motors motors;
  Declaring the states for the finite state machine
 */
 enum State {
-  Forward_Idle,
-  Forward,
-  Right_Turn,
-  Left_Turn,
-  Backward,
+  Forward_Idle,//Stationary, but ready to move forward position
+  Forward, //Move forward
+  Right_Turn, //Follows the turnRight() logic
+  Left_Turn, //Follows the turnLeft() logic
+  Backward, //Move backward
   Backward_Idle,
   System_Off,
 };
@@ -118,7 +118,10 @@ void turnLeft() {
   state = Forward_Idle;
   Input = "";
 }
-// Right Turn
+
+/**
+ Making the robot turn right
+ */
 void turnRight() {
   motors.setSpeeds(turnSpeed, -turnSpeed);
   for (int i = 0; i < 3500; i++) {
