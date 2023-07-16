@@ -60,8 +60,8 @@ void receiverSetup() {
   //Starts serial communication
   Serial.begin(115200);
   pinMode(RFM69_RST, OUTPUT);
+  //Process of initialization
   digitalWrite(RFM69_RST, LOW);
-  // manual reset
   digitalWrite(RFM69_RST, HIGH);
   delay(10);
   digitalWrite(RFM69_RST, LOW);
@@ -70,8 +70,7 @@ void receiverSetup() {
     while (1)
       ;
   }
-  // Defaults after init are 434.0MHz, modulation GFSK_Rb250Fd250, +13dbM (for
-  // low power module) No encryption
+  //Sets up frequency, initializes encryption and configures power settings
   if (!rf69.setFrequency(RF69_FREQ)) {
   }
   rf69.setTxPower(
@@ -87,16 +86,15 @@ rf69.setEncryptionKey(key);
  Reading signals from the transmitter
 */
 void receiverLoop() {
-  
   //if a message is received
   if (rf69.available()) {
-    uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
+    uint8_t buf[RH_RF69_MAX_MESSAGE_LEN]; //array to store the message
     uint8_t len = sizeof(buf);
     if (rf69.recv(buf, &len)) {
       if (!len) return;
       buf[len] = 0;
       Input = (char*)buf;
-      Serial.println(Input);
+      Serial.println(Input); //printing to the serial monitor
       53 uint8_t data[] = "Recieved";
       rf69.send(data, sizeof(data));
       rf69.waitPacketSent();
