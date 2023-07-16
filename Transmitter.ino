@@ -36,10 +36,10 @@ void setup() {
   }
   Serial.println("RFM69 radio init OK!");
 
+  //Set frequency and encryption key
   if (!rf69.setFrequency(RF69_FREQ)) {
     Serial.println("setFrequency failed");
   }
- //Array of 
   uint8_t key[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
                    0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
 
@@ -49,22 +49,24 @@ void setup() {
   Serial.print((int)RF69_FREQ);
   Serial.println(" MHz");
 }
+
+/**
+ The mandatory function for Arduino - it reads the content from the serial monitor 
+ */
 void loop() {
   delay(1000);
-  char input = Serial.read();
+  char input = Serial.read(); //reads data from the serial monitor
   if (Serial.available() && input != 0) {
-    char radiopacket[2] = "n";
+    char radiopacket[2] = "n"; //stores the information that needs to be sent over for the radio communication
     radiopacket[0] = input;
     Serial.print("Sending ");
     Serial.println(radiopacket);
-    // Send a message!
+    //send the message
     rf69.send((uint8_t *)radiopacket, strlen(radiopacket));
     rf69.waitPacketSent();
-    // Now wait for a reply
     uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
     if (rf69.waitAvailableTimeout(500)) {
-      // Should be a reply message for us now
       if (rf69.recv(buf, &len)) {
         Serial.print("Got a reply: ");
         Serial.println((char *)buf);
