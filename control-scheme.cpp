@@ -39,6 +39,9 @@ public:
         window.draw(shape);
     }
 
+  /**
+    Processing user events and updating the state of the rectangle
+  */
     void handleInput(sf::Event event) override {
         if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
             sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition());
