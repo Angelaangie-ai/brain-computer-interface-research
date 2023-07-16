@@ -135,6 +135,10 @@ void turnRight() {
   state = Forward_Idle;
   Input = "";
 }
+
+/**
+ Logic of the finite state machine to control the behavior of the robot
+ */
 void stateMachine() {
   // System_Off
   if (state == System_Off) {
