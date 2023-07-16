@@ -23,8 +23,8 @@ enum State {
   Right_Turn, //Follows the turnRight() logic
   Left_Turn, //Follows the turnLeft() logic
   Backward, //Move backward
-  Backward_Idle,
-  System_Off,
+  Backward_Idle,//Stationary, facing backward
+  System_Off,//Robot is turned off
 };
 /************* Constants ****************/
 const uint16_t motorSpeed = 100;
