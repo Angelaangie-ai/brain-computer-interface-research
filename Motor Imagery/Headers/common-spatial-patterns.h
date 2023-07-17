@@ -11,6 +11,7 @@
 using namespace std;
 using namespace Eigen;
 
+public:
 /**
  * The function reads a CSV file and returns a vector of doubles
  */
