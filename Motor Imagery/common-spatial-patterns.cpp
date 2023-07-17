@@ -1,3 +1,4 @@
+#include "Headers/common-spatial-patterns.h"
 #include <Eigen/Dense>
 #include <cmath>
 #include <fstream>
