@@ -13,7 +13,8 @@ The cap has the following layout:
 
 ![Screenshot 2023-07-17 7 14 41 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/cd7a3dc9-da6b-421f-83af-a5a98328a6c0)
 
-I focused to classify motor imagery data through common spatial pattern filters and classification of tasks by a random forest predictive algorithm.
+In the image, the scatter plot on the left shows the original signal, and the scatter plot on the right shows the signal after CSP has been applied. The CSP algorithm has effectively separated the signal into two components, one that is more representative of left hand movement and one that is more representative of right hand movement. This makes it easier to classify the signal, as the classifier only needs to distinguish between two different classes instead of a large number of different classes.
+
 
 ![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
