@@ -17,7 +17,11 @@ In the image, the scatter plot on the left shows the original signal, and the sc
 
 ![Screenshot 2023-07-17 7 34 22 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/a627ff6f-3654-4814-bfd1-08e7d8f6611d)
 
+Due to the noise present in the data, the difference is not the most visible. However, the CSP's impact can be seen in the following places:
 
+|       | Original Signal | Signal after CSP |
+|-------|------------|------------|
+| Number of points | More points | Less points|
 
 ![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
