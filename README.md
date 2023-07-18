@@ -24,5 +24,13 @@ something
 | Row 1 | %   | %   | %   |
 
 
+something
+
+| Statistic              | Value      |
+|------------------------|------------|
+| Samples                |            |
+| Mean                   |            |
+| Standard Deviation     |       %    |
+| Variance               |            |
 
 
