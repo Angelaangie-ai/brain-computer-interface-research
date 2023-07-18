@@ -9,8 +9,7 @@ An EEG cap was used to obtain occipital alpha power density, frontal muscular ar
 cessing. Signal-processing algorithms were developed and implemented in order to determine the user’s mental activity. While the implementation with a physical robot has yet to be
 completed, simulation data demonstrates promising results for future real-time asynchronous control of physical devices.
 
-![Screenshot 2023-07-17 7 08 43 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/da7ef989-8e1b-48e2-b8f0-22d9b9b3ed99)
-
+![Screenshot 2023-07-17 7 14 41 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/cd7a3dc9-da6b-421f-83af-a5a98328a6c0)
 
 I focused to classify motor imagery data through common spatial pattern filters and classification of tasks by a random forest predictive algorithm.
 
