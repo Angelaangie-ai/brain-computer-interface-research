@@ -30,7 +30,7 @@ After we apply CSP to the data, we analyze it using Random Forest. The result ar
 
 ![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
-The purple data represents right motor imagery, the green data represents left motor imagery.
+The purple data represents right motor imagery, the green data represents left motor imagery. The random forest model is able to distinguish between right and left motor imagery by using different decision trees.
 
 The results from the analyzed trials are
 
