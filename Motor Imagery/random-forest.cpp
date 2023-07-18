@@ -284,7 +284,7 @@ vector<double> Test_tree(vector<brain> &test_data, struct node* root)
    {
        struct node* current;
        current = root;
-       // we go on to find the place in the 
+       // we go on to find the place in the tree
        while (current->isLeaf == false)
        {
            if (test_data[i].value[current->feature] >= current->gap_value)
@@ -298,6 +298,7 @@ vector<double> Test_tree(vector<brain> &test_data, struct node* root)
                //cout << current->feature << " lower" << endl;
            }
        }
+       //If both of them are equal, then the number of correct ones will increase
        if (current->species == test_data[i].species)
        {
            correct++;
