@@ -13,7 +13,13 @@ completed, simulation data demonstrates promising results for future real-time a
 
 I focused to classify motor imagery data through common spatial pattern filters and classification of tasks by a random forest predictive algorithm.
 
-![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
 something
 
+
+
+![Screenshot 2023-07-17 7 34 22 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/a92e9999-b013-4d30-b996-673c29df5629)
+
+something 2
+
+![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
