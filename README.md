@@ -17,3 +17,8 @@ I focused to classify motor imagery data through common spatial pattern filters 
 
 something
 
+![Screenshot 2023-07-17 7 34 22 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/a627ff6f-3654-4814-bfd1-08e7d8f6611d)
+
+
+
+
