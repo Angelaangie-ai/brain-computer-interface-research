@@ -273,6 +273,108 @@ void Construct_tree(vector<brain> &data, struct node *&root) {
 }
 
 /**
+ Evaluating the results of the decision model
+*/
+
+vector<double> Test_tree(vector<brain> &test_data, struct node* root)  
+{
+   string result[30][2];
+   int correct = 0; //storing how many of the results are received correctly 
+   for (int i = 0; i < 30; i++)
+   {
+       struct node* current;
+       current = root;
+       // we go on to find the place in the 
+       while (current->isLeaf == false)
+       {
+           if (test_data[i].value[current->feature] >= current->gap_value)
+           {
+               current = current->higher;
+               //cout << current->feature << " higher" << endl;
+           }
+           else
+           {
+               current = current->lower;
+               //cout << current->feature << " lower" << endl;
+           }
+       }
+       if (current->species == test_data[i].species)
+       {
+           correct++;
+       }
+       result[i][0] = current->species;
+       result[i][1] = test_data[i].species;
+       //cout << result[i][0] << " " << result[i][1] << endl;
+   }
+   double accuracy = correct / (double)30;
+   cout << accuracy << endl;
+   //the TP, TN, FP, FN are all 0 at the beginning
+   //True Positives are increasing when the model correctly predicts the positive class
+   //False Positives are the occassions when the model predicts positively, 
+   //but result is not matching
+   int TP[3] = { 0 }, TN[3] = { 0 }, FP[3] = { 0 }, FN[3] = { 0 }; 
+   for (int i = 0; i < 30; i++)
+   {
+       for (int j = 0; j < 3; j++)
+       {
+           switch (j)
+           {
+           case 0:
+               if (result[i][0] == "Left" && result[i][1] == "Left")
+               {
+                   TP[j]++;
+               }
+               else if (result[i][0] == "Left" && result[i][1] != "Left")
+               {
+                   FP[j]++;
+               }
+               else if (result[i][0] != "Left" && result[i][1] == "Left")
+               {
+                   FN[j]++;
+               }
+               else
+               {
+                   TN[j]++;
+               }
+               break;
+           case 1:
+               if (result[i][0] == "Right" && result[i][1] == "Right")
+               {
+                   TP[j]++;
+               }
+               else if (result[i][0] == "Right" && result[i][1] != "Right")
+               {
+                   FP[j]++;
+               }
+               else if (result[i][0] != "Right" && result[i][1] == "Right")
+               {
+                   FN[j]++;
+               }
+               else
+               {
+                   TN[j]++;
+               }
+               break;
+          
+               break;
+           }
+       }
+   }
+   //Declaring the precision and the recall
+   double left_precision = TP[0] + FP[0] > 0 ? TP[0] / (double)(TP[0] + FP[0]) : 0; ////////////////////////todo: nan(ind)
+   double right_precision = TP[1] + FP[1] > 0 ? TP[1] / (double)(TP[1] + FP[1]) : 0;
+   double left_recall = TP[0] + FN[0] > 0 ? TP[0] / (double)(TP[0] + FN[0]) : 0;
+   double right_recall = TP[1] + FN[1] > 0 ? TP[1] / (double)(TP[1] + FN[1]) : 0;
+   vector<double> stat;
+   stat.push_back(left_precision);
+   stat.push_back(right_precision);
+   stat.push_back(left_recall);
+   stat.push_back(right_recall);
+   stat.push_back(accuracy);
+   return stat;
+}
+
+/**
  Evaluating the performance of a decision tree model, takes a reference to a
  vector of 'brain' objects
 */
