@@ -290,25 +290,23 @@ vector<double> Test_tree(vector<brain> &test_data, struct node* root)
            if (test_data[i].value[current->feature] >= current->gap_value)
            {
                current = current->higher;
-               //cout << current->feature << " higher" << endl;
            }
            else
            {
                current = current->lower;
-               //cout << current->feature << " lower" << endl;
            }
        }
-       //If both of them are equal, then the number of correct ones will increase
+       //If both of them have equal values, then the number of correct ones will increase
        if (current->species == test_data[i].species)
        {
            correct++;
        }
        result[i][0] = current->species;
        result[i][1] = test_data[i].species;
-       //cout << result[i][0] << " " << result[i][1] << endl;
    }
    double accuracy = correct / (double)30;
    cout << accuracy << endl;
+ 
    //the TP, TN, FP, FN are all 0 at the beginning
    //True Positives are increasing when the model correctly predicts the positive class
    //False Positives are the occassions when the model predicts positively, 
@@ -362,7 +360,7 @@ vector<double> Test_tree(vector<brain> &test_data, struct node* root)
        }
    }
    //Declaring the precision and the recall
-   double left_precision = TP[0] + FP[0] > 0 ? TP[0] / (double)(TP[0] + FP[0]) : 0; ////////////////////////todo: nan(ind)
+   double left_precision = TP[0] + FP[0] > 0 ? TP[0] / (double)(TP[0] + FP[0]) : 0;
    double right_precision = TP[1] + FP[1] > 0 ? TP[1] / (double)(TP[1] + FP[1]) : 0;
    double left_recall = TP[0] + FN[0] > 0 ? TP[0] / (double)(TP[0] + FN[0]) : 0;
    double right_recall = TP[1] + FN[1] > 0 ? TP[1] / (double)(TP[1] + FN[1]) : 0;
