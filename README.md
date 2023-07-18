@@ -26,9 +26,13 @@ Due to the noise present in the data, the difference is not the most visible. Ho
 | Variance | Larger Variance | Smaller Variance |
 
 
+After we apply CSP to the data, we analyze it using Random Forest. The result are presented in the following graph:
+
 ![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
-something
+The purple data represents right motor imagery, the green data represents left motor imagery.
+
+The results from the analyzed trials are
 
 
 |       | Column 1   | Column 2   | Column 3   |
