@@ -17,7 +17,7 @@ using namespace std;
  Defining the structure for the brain
 */
 struct brain {
-  double value[2];  // stores two values TBA: what are the values doing
+  double value[2];  // stores two values 
   string species;   // stores whether the left or the right side is more active
 };
 
