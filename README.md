@@ -32,21 +32,12 @@ After we apply CSP to the data, we analyze it using Random Forest. The result ar
 
 The purple data represents right motor imagery, the green data represents left motor imagery. The random forest model is able to distinguish between right and left motor imagery by using different decision trees.
 
-The results from the analyzed trials are
+The accuracy results from the analyzed trials are the following:
 
 
-|       | Column 1   | Column 2   | Column 3   |
-|-------|------------|------------|------------|
-| Row 1 | %   | %   | %   |
-
-
-something
-
-| Statistic              | Value      |
-|------------------------|------------|
-| Samples                |            |
-| Mean                   |            |
-| Standard Deviation     |       %    |
-| Variance               |            |
+|------------|------------|------------|
+| 89.1556% % | 91. 3414 %  | 88.3556 % |
+| %   | %   | %   |
+| %   | %   | %   |
 
 
