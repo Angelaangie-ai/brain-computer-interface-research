@@ -26,7 +26,7 @@ struct brain {
 */
 struct node {
   int feature;
-  ? bool isLeaf;
+  bool isLeaf;
   double gap_value;     // threshold value used to split the value
   struct node *higher;  // values greater than the gap_value
   struct node *lower;   // values lower than the gap value
