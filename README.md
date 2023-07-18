@@ -22,6 +22,9 @@ Due to the noise present in the data, the difference is not the most visible. Ho
 |       | Original Signal | Signal after CSP |
 |-------|------------|------------|
 | Number of points | More points | Less points|
+| Distribution of points | Uniform | Clustered |
+| Variance | Larger Variance | Smaller Variance |
+
 
 ![Screenshot 2023-07-17 7 26 47 PM](https://github.com/Angelaangie-ai/brain-computer-interface-research/assets/64707998/375aca54-d9ec-4e4f-aa33-6a79b8cb47a5)
 
