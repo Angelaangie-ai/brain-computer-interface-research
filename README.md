@@ -34,7 +34,6 @@ The purple data represents right motor imagery, the green data represents left m
 
 The accuracy results from the analyzed trials are the following:
 
-
 | 89.1556% % | 91.3414 % | 88.3556 % |
 |-------|------------|------------|
 
