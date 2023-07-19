@@ -59,15 +59,15 @@ void loop() {
   if (Serial.available() && input != 0) {
     char radiopacket[2] = "n"; //stores the information that needs to be sent over for the radio communication
     radiopacket[0] = input;
-    Serial.print("Sending ");
+    Serial.print("Sending "); 
     Serial.println(radiopacket);
     //send the message
-    rf69.send((uint8_t *)radiopacket, strlen(radiopacket));
-    rf69.waitPacketSent();
+    rf69.send((uint8_t *)radiopacket, strlen(radiopacket)); //sends the message 
+    rf69.waitPacketSent(); //waits for a message to be sent back
     uint8_t buf[RH_RF69_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
-    if (rf69.waitAvailableTimeout(500)) {
-      if (rf69.recv(buf, &len)) {
+    if (rf69.waitAvailableTimeout(500)) { //if there is a message
+      if (rf69.recv(buf, &len)) { //the message is called
         Serial.print("Got a reply: ");
         Serial.println((char *)buf);
       } else {
