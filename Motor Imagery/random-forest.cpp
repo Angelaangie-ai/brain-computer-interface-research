@@ -378,8 +378,8 @@ vector<double> Test_tree(vector<brain> &test_data, struct node* root)
  vector of 'brain' objects
 */
 void K_fold_Validation(vector<brain> &data) {
-  vector<double> result;
-  vector<double> mean_total_result;
+  vector<double> result; //creating a vector to store the results
+  vector<double> mean_total_result; //creating a vector to calculate the mean results across all folds
   vector<brain> train_data, test_data, temp, temp2;
   // Resize the result to include 7 places
   mean_total_result.resize(7);
@@ -397,6 +397,7 @@ void K_fold_Validation(vector<brain> &data) {
     train_data.insert(train_data.end(), temp.begin(), temp.end());
     train_data.insert(train_data.end(), temp2.begin(), temp2.end());
     struct node *root = NULL;  
+   //We 
     Construct_tree(train_data, root);
     result = Test_tree(test_data, root);
     for (int i = 0; i < 7; i++) {
